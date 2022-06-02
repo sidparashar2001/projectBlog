@@ -25,6 +25,9 @@ router.post("/admin/category_insert",CategoryController.category_insert)
 router.get("/admin/createBlog",BlogController.createBlog)
 router.post("/admin/blog_insert",BlogController.blog_insert)
 router.get("/admin/blog_display",BlogController.blog_display)
+router.get("/admin/blog_edit/:id",BlogController.blog_edit)
+router.post("/admin/blog_update/:id",BlogController.blog_update)
+router.get("/admin/blog_delete/:id",BlogController.blog_delete)
 
 
 

@@ -1,7 +1,13 @@
+const BlogModel=require("../models/Blog.js")
+
 class FrontController{
 
     static index=async(req,res)=>{
-        res.render("front/index")
+        try{
+            const result=await BlogModel.find()
+            console.log(result)
+            res.render("front/index",{data:result})
+        }catch(err){console.log(err)}
     }
 
     static about=async(req,res)=>{
@@ -21,6 +27,9 @@ class FrontController{
     }
 
     
+
+
+
 }
 
 module.exports=FrontController

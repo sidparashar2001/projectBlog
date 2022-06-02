@@ -46,6 +46,46 @@ class BlogController{
             console.log(err)
         }
     }
+
+
+
+
+    static blog_edit=async(req,res)=>{
+        try{
+            const result = await BlogModel.findById(req.params.id)
+            // console.log(result)
+            res.render("admin/blog/edit",{data:result})
+
+        }catch(err){
+            console.log(err)
+        }
+    }
+
+    static blog_update=async(req,res)=>{
+        try{
+
+            // console.log(req.body)
+            const result=await BlogModel.findByIdAndUpdate(req.params.id,req.body)
+            // console.log(result)
+
+            await result.save()
+            res.redirect("/admin/blog_display")
+
+        }catch(err){
+            console.log(err)
+        }
+    }
+
+    static blog_delete=async(req,res)=>{
+        try{
+
+            const result=await BlogModel.findByIdAndDelete(req.params.id)
+            res.redirect("/admin/blog_display")
+
+        }catch(err){
+            console.log(err)
+        }
+    }
 }
 
 
