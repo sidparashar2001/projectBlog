@@ -1,4 +1,4 @@
-<%- include("../../partition/header.ejs")  %>
+<%- include("../partition/header.ejs")  %>
 
 <section class="dashboard-wrap mtb-40">
     <div class="container">
@@ -23,7 +23,7 @@
                                 <h1>Blogs</h1>
                             </div>
                             <div class="dash-nav">
-                                <a href="/admin/createblog" class="btn btn-success">Add Post</a>
+                                <a href="/create_image" class="btn btn-success">Add Post</a>
                             </div>
                         </div>
                         <table class="table table-bordered table-striped">
@@ -31,21 +31,23 @@
                                 <th>#ID</th>
                                 <th>Image</th>
                                 <th>Title</th>
-                                <th>Category</th>
+                                <!-- <th>Category</th> -->
                                 <th>Posted On</th>
                                 <th>Action</th>
                             </tr>
                             <% var id=1 %>
                            <% data.forEach((item)=>{ %>
                             <tr>
-                                <td><%= id++ %></td>
-                                <td><img src="/upload/<%= item.image %>" ></td>
+                                <td><%= id++ %></td> 
+                                <td>
+                                    <img src="/upload/<%= item.image %>" alt="">
+                                </td>
                                 <td><%= item.title %></td>
-                                <td><%= item.category_name %></td>
+                                <!-- <td><%= item.category_name %></td> -->
                                 <td><%= item.createdAt.toLocaleDateString() %></td>
                                 <td>
-                                    <a href="/admin/blog_edit/<%= item._id %>" class="btn btn-info btn-sm">Edit</a>
-                                    <a href="/admin/blog_delete/<%= item._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="/image_edit/<%= item._id %>" class="btn btn-info btn-sm">Edit</a>
+                                    <a href="/image_delete/<%= item._id %>" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
                         <%   }) %>
@@ -59,4 +61,4 @@
 </section>
 
 
-<%- include("../../partition/footer.ejs")  %>
+<%- include("../partition/footer.ejs")  %>

@@ -8,7 +8,7 @@
                     <div class="dash-left">
                         <ul>
                             <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
-                            <li><a href="/admin/blog" class="active">Blogs</a></li>
+                            <li><a href="/admin/blog_display">Blogs</a></li>
                             <li><a href="/admin/category">Categories</a></li>
                             <li><a href="/admin/contact_display">Contact</a></li>
                             <li><a href="/admin/about">About</a></li>
@@ -20,36 +20,38 @@
                     <div class="dash-right">
                         <div class="dash-header">
                             <div class="dash-title">
-                                <h1>Blogs</h1>
+                                <h1>Contacts</h1>
                             </div>
+                            
                             <div class="dash-nav">
-                                <a href="/admin/createblog" class="btn btn-success">Add Post</a>
+                                <a href="/admin/contact" class="btn btn-success">Add Contact</a>
                             </div>
                         </div>
                         <table class="table table-bordered table-striped">
                             <tr>
-                                <th>#ID</th>
-                                <th>Image</th>
-                                <th>Title</th>
-                                <th>Category</th>
-                                <th>Posted On</th>
-                                <th>Action</th>
+                                <th>ID</th>
+                                
+                                <th>Name</td>
+                                <th>E-mail</td>
+                                <th>Phone</td>
+                                <th>Message</td>
+                                <th>Action</td>
                             </tr>
                             <% var id=1 %>
-                           <% data.forEach((item)=>{ %>
+                           <% data.forEach((item)=>{ %>    
                             <tr>
                                 <td><%= id++ %></td>
-                                <td><img src="/upload/<%= item.image %>" ></td>
-                                <td><%= item.title %></td>
-                                <td><%= item.category_name %></td>
-                                <td><%= item.createdAt.toLocaleDateString() %></td>
+                                <td><%= item.name %></td>
+                                <td><%= item.email %></td>
+                                <td><%= item.phone %></td>
+                                <td><%= item.message %></td>
                                 <td>
-                                    <a href="/admin/blog_edit/<%= item._id %>" class="btn btn-info btn-sm">Edit</a>
-                                    <a href="/admin/blog_delete/<%= item._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="/admin/contact_edit/<%= item._id %>" class="btn btn-info btn-sm">Edit</a>
+                                    <a href="/admin/contact_delete/<%= item._id %>" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
-                        <%   }) %>
-                            
+                        
+                            <% }) %>  
                         </table>
                     </div>   
                 </div>

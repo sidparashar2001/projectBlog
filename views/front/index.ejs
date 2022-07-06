@@ -7,7 +7,7 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
             </div>
         </div>
-        <img src="/assets/images/banner.jpg" alt="banner" />
+        <img src="/assets/images/HomeImage.jpg"  alt="banner" />
     </div>
 </section>
 <section class="featured-blog mtb-40">
@@ -16,11 +16,11 @@
             <% data.forEach((item)=>{ %>
             <div class="col-md-4">
                 <div class="blog-box">
-                    <img src="/assets/images/img1.jpg" alt="blog1" />
+                    <img height="240px" src="/upload/<%= item.image %>" alt="blog1" />
                     <h3><%= item.title %></h3>
                     <p><span><%= item.createdAt.toLocaleDateString() %></span></p>
-                    <p><%= item.description %> </p>
-                    <a href="detail.html" class="btn btn-danger">Read more...</a>
+                    <p><%= item.description.slice(0,90) %> </p>
+                    <a href="/detail/<%= item._id %>" class="btn btn-outline-danger">Read more...</a>
                 </div>
             </div>
          <%   }) %>

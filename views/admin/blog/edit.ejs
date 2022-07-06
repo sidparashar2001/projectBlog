@@ -22,30 +22,40 @@
                           </div>
                         </div>
                         <div class="blog-form">
-                          <form action="/admin/blog_update/<%= data._id %>" method="post">
+                          <form action="/admin/blog_update/<%= data2._id %>" method="post" enctype="multipart/form-data">
                             <div class="form-group form-row">
                                 <label class="col-md-3">Category<span class="required">*</span></label>
+                               
                                 <div class="col-md-9">
                                   <select name="category_name" class="form-control" id="">
-                                    
+                                  
+                                   <% data1.forEach((data)=>{ %>
                                     
                                     <option value="<%= data.category_name %>"><%= data.category_name %></option>
+
+                                    <% }) %>
                                   </select>
                                 </div>
                             </div>
                             <div class="form-group form-row">
                                 <label class="col-md-3">Title <span class="required">*</span></label>
                                 <div class="col-md-9">
-                                  <input type="text" name="title" class="form-control" placeholder="Title" required value="<%= data.title %>">
+                                  <input type="text" name="title" class="form-control" placeholder="Title" required value="<%= data2.title %>">
                                 </div>
                             </div>
                             
                             <div class="form-group form-row">
                                 <label class="col-md-3">Description <span class="required">*</span></label>
                                 <div class="col-md-9">
-                                  <textarea name="description" rows="5" class="form-control" placeholder="Description" required><%= data.description %></textarea>
+                                  <textarea name="description" rows="5" class="form-control" placeholder="Description" required><%= data2.description %></textarea>
                                 </div>
                             </div>
+                            <div class="form-group form-row">
+                              <label class="col-md-3">Image <span class="required">*</span></label>
+                              <div class="col-md-9">
+                                  <input type="file" name="image" id="">
+                              </div>
+                          </div>
                             <div class="form-group form-row">
                                 <label class="col-md-3"></label>
                                 <div class="col-md-9">

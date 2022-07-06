@@ -1,6 +1,9 @@
 const express =require("express")
 const connectDB = require("./db/connect_db.js")
 const app=express()
+var session = require('express-session')
+var flash = require('connect-flash');
+
 const port=3000
 const web=require("./routes/web.js")
 var bodyParser=require("body-parser")
@@ -9,6 +12,18 @@ connectDB()
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended:false}))
+
+
+app.use(session({
+    secret: 'secret',
+    cookie: { maxAge: 60000 },
+    resave: false,
+    saveUninitialized: false,
+    
+  }));
+  
+  app.use(flash());
+  
 
 
 // Router Load
