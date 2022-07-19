@@ -10,6 +10,8 @@ const ContactSchema =new mongoose.Schema({
 
 //console.log(studentSchema.path('age'))
 
+
+// Creating Collection
 const ContactModel = mongoose.model('contact',ContactSchema);
 
 

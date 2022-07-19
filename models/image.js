@@ -10,6 +10,8 @@ const imageSchema =new mongoose.Schema({
 },{timestamps:true})
 
 
+
+// Creating Collection
 const imageModel = mongoose.model('image',imageSchema);
 
 

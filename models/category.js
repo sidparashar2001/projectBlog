@@ -7,6 +7,8 @@ const CategorySchema =new mongoose.Schema({
 
 //console.log(studentSchema.path('age'))
 
+
+// Creating Collection
 const CategoryModel = mongoose.model('category',CategorySchema);
 
 

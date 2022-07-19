@@ -16,6 +16,10 @@ class ContactController{
     }
     
     static contact_insert=async(req,res)=>{
+        
+        
+        
+        
         try{
             const result = new ContactModel({
                 name:req.body.name,

@@ -9,6 +9,8 @@ const UserSchema =new mongoose.Schema({
 },{timestamps:true})
 
 
+
+// Creating Collection
 const UserModel = mongoose.model('user',UserSchema);
 
 

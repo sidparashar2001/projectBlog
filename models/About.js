@@ -7,6 +7,8 @@ const AboutSchema =new mongoose.Schema({
 
 //console.log(studentSchema.path('age'))
 
+
+// Creating Collection
 const AboutModel = mongoose.model('about',AboutSchema);
 
 

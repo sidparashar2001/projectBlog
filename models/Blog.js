@@ -11,7 +11,7 @@ const BlogSchema =new mongoose.Schema({
 },{timestamps:true})
 
 
+// Creating Collection
 const BlogModel = mongoose.model('blog',BlogSchema);
-
 
 module.exports = BlogModel ;  
