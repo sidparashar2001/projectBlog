@@ -10,7 +10,7 @@ class BlogController{
         try{
             // console.log(result)
             const result=await CategoryModel.find()
-            res.render("admin/blog/createblog",{cat:result})
+            res.render("admin/blog/createBlog",{cat:result})
         }
         catch(err){
             console.log(err)
