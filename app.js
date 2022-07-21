@@ -4,7 +4,12 @@ const app=express()
 var session = require('express-session')
 var flash = require('connect-flash');
 
-const port=3000
+// For local
+// const port=3000
+
+// For local and server both
+const port = process.env.PORT || 3000;
+
 const web=require("./routes/web.js")
 var bodyParser=require("body-parser")
 
