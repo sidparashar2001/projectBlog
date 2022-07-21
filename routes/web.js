@@ -31,7 +31,7 @@ router.post("/admin/category_insert",CategoryController.category_insert)
 
 // Create Router for Blog Controller
 // router.get("/admin/blog",BlogController.blog)
-router.get("/admin/createBlog",BlogController.createBlog)
+router.get("/admin/createblog",BlogController.createBlog)
 router.post("/admin/blog_insert",upload,BlogController.blog_insert)
 router.get("/admin/blog_display",BlogController.blog_display)
 router.get("/admin/blog_edit/:id",BlogController.blog_edit)
