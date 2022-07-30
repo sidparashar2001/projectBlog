@@ -1,4 +1,5 @@
 const express=require("express")
+const auth = require("../middleware/AuthMiddleware")
 
 const AboutController = require("../controllers/admin/AboutController")
 const BlogController = require("../controllers/admin/BlogController")
@@ -24,7 +25,7 @@ router.get("/detailbycat/:catname",FrontController.detailbycat)
 
 
 // Create Router for Admin Controller
-router.get("/admin/dashboard",AdminController.dashboard)
+router.get("/admin/dashboard",auth,AdminController.dashboard)
 // Admin Category Controller
 router.get("/admin/category",CategoryController.allCategory)
 router.post("/admin/category_insert",CategoryController.category_insert)
@@ -68,7 +69,7 @@ router.get("/image_delete/:id",ImageController.imageDelete)
 router.get("/signup",UserController.signup)
 router.post("/insertuser",UserController.insertuser)
 router.post("/verify_login",UserController.verifyLogin)
-
+router.get("/logout",UserController.logout)
 
 
 

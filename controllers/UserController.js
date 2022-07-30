@@ -30,6 +30,11 @@ class UserController {
                             email: email,
                             password: hashPassword
                         })
+                        // JWT Generate Token
+                        const token=await result.generateAuthToken()
+
+                        // console.log(token)
+                        res.cookie('jwt',token)
                         await result.save()
                         return res.redirect("/login")
                     }
@@ -62,6 +67,9 @@ class UserController {
                     // The first password is coming from line 57
                     const isMatched = await bcrypt.compare(password, user.password)
                     if ((user.email === email) && isMatched) {
+                        const token=await user.generateAuthToken()
+                        // console.log(token)
+                        res.cookie('jwt',token)
                         res.redirect("/admin/dashboard")
                     }
                     else {
@@ -82,6 +90,21 @@ class UserController {
             console.log(err)
         }
     }
+
+    // For logging out the user
+    static logout=async(req,res)=>{
+        try{
+            res.clearCookie('jwt')
+            res.redirect('/login')
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
+
+
+
 
 
 }

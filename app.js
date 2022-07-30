@@ -3,6 +3,7 @@ const connectDB = require("./db/connect_db.js")
 const app=express()
 var session = require('express-session')
 var flash = require('connect-flash');
+const cookieParser = require('cookie-parser')
 
 // For local
 // const port=3000
@@ -14,6 +15,8 @@ const web=require("./routes/web.js")
 var bodyParser=require("body-parser")
 
 connectDB()
+
+app.use(cookieParser())
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended:false}))

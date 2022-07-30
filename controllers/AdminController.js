@@ -1,6 +1,9 @@
 class AdminController{
     static dashboard=(req,res)=>{
-        res.render("admin/dashboard")
+        // console.log(req.user.name)
+        const {name,email}=req.user
+
+        res.render("admin/dashboard",{n:name,e:email})
     }
 }
 
