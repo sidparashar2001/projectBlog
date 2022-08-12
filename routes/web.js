@@ -27,14 +27,14 @@ router.get("/detailbycat/:catname",FrontController.detailbycat)
 // Create Router for Admin Controller
 router.get("/admin/dashboard",auth,AdminController.dashboard)
 // Admin Category Controller
-router.get("/admin/category",CategoryController.allCategory)
+router.get("/admin/category",auth,CategoryController.allCategory)
 router.post("/admin/category_insert",CategoryController.category_insert)
 
 // Create Router for Blog Controller
 // router.get("/admin/blog",BlogController.blog)
 router.get("/admin/createblog",BlogController.createBlog)
 router.post("/admin/blog_insert",upload,BlogController.blog_insert)
-router.get("/admin/blog_display",BlogController.blog_display)
+router.get("/admin/blog_display",auth,BlogController.blog_display)
 router.get("/admin/blog_edit/:id",BlogController.blog_edit)
 router.post("/admin/blog_update/:id",upload,BlogController.blog_update)
 router.get("/admin/blog_delete/:id",BlogController.blog_delete)
@@ -52,7 +52,7 @@ router.get("/admin/contact_delete/:id",ContactController.contact_delete)
 
 // About Controller
 
-router.get("/admin/about",AboutController.about)
+router.get("/admin/about",auth,AboutController.about)
 router.post("/admin/about_update/:id",AboutController.about_update)
 
 // Image Controllers
